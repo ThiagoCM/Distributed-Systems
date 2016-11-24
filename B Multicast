@@ -1,0 +1,19 @@
+#TODO implementação do B-multicast síncrono.
+g = workers()
+
+#implementação assíncrona do professor.
+function B_multicast(g,m,B_deliver)
+    for p in g
+        remotecall(p, B_deliver, m)
+    end
+end
+
+B_multicast(g, "oi! a", println)
+
+function B_multicast_s(g,m,B_deliver)
+    for i in g
+        remotecall_wait(i, B_deliver, m)      
+    end
+end
+
+B_multicast_s(g, "oi! s", println)
