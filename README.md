@@ -1,5 +1,5 @@
 # Distributed-Systems
-Codes related to the class of 2016.1
+Codes related to the class of 2016.1 on Universidade Federal de Alagoas
 
 Teacher: [André Lage](https://github.com/proflage)
 
