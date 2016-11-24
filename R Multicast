@@ -14,3 +14,19 @@ end
    
 g = workers()
 r_multicast_s(g, "oi!", println)
+
+
+function r_multicast_a(g, m, B_deliver)
+    recebido = ""
+    for i in g
+        if (recebido != m)
+            recebido = m
+            if i != g
+                B_multicast(g, m, B_deliver)
+            end
+        end
+    end
+end
+   
+g = workers()
+r_multicast_a(g, "oi! a", println)
