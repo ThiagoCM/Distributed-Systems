@@ -1,0 +1,16 @@
+#TODO implementação do R-multicast síncrono.
+# Neste multicast, deve haver recebimento da mensagem enviada pelo recebedor
+function r_multicast_s(g, m, B_deliver)
+    recebido = "0"
+    for i in g
+        if (recebido != m)
+            recebido = m
+            if i != g
+                B_multicast_s(g, m, B_deliver)
+            end
+        end
+    end
+end
+   
+g = workers()
+r_multicast_s(g, "oi!", println)
